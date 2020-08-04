@@ -1,0 +1,24 @@
+安装 env.sample 文件 不存在的php扩展方法
+如安装 SeasClilck
+
+
+编辑 service/php/extension/install.sh
+
+
+如果扩展支持pecl 安装:
+
+if [[ -z "${EXTENSIONS##*,SeasClick,*}" ]]; then
+    isPhpVersionGreaterOrEqual 7 1
+    if [[ "$?" = "1" ]]; then
+        echo "---------- Install SeasClick ----------"
+        printf "\n" | pecl install SeasClick
+        docker-php-ext-enable SeasClick
+    else
+        echo "SeasClick requires PHP >= 7.1.0, installed version is ${PHP_VERSION}"
+    fi
+fi
+
+复制以上代码到 install.sh 文件
+
+如果不支持pecl  需要源代码编译安装：
+....

@@ -422,6 +422,17 @@ if [[ -z "${EXTENSIONS##*,pdo_sqlsrv,*}" ]]; then
     fi
 fi
 
+if [[ -z "${EXTENSIONS##*,SeasClick,*}" ]]; then
+    isPhpVersionGreaterOrEqual 7 1
+    if [[ "$?" = "1" ]]; then
+        echo "---------- Install SeasClick ----------"
+        printf "\n" | pecl install SeasClick
+        docker-php-ext-enable SeasClick
+    else
+        echo "SeasClick requires PHP >= 7.1.0, installed version is ${PHP_VERSION}"
+    fi
+fi
+
 if [[ -z "${EXTENSIONS##*,sqlsrv,*}" ]]; then
     isPhpVersionGreaterOrEqual 7 1
     if [[ "$?" = "1" ]]; then

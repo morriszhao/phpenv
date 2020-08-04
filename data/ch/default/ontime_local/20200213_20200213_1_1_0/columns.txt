@@ -1,0 +1,4 @@
+columns format version: 1
+2 columns:
+`Year` UInt16
+`FlightDate` Date

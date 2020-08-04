@@ -1,0 +1,6 @@
+columns format version: 1
+4 columns:
+`Year` UInt16
+`FlightDate` Date
+`name` String
+`age` UInt8
