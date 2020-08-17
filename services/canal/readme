@@ -1,0 +1,15 @@
+canal 读取binlog  推送到kafka 流程
+
+canal：
+1、先启动一下canal 看一下canal的配置文件位置  conf logs  一般是在/home/admin/canal-server/logs
+2、使用docker cp 将对应目录  复制到主机
+3、修改挂载目录
+4、修改canal 对应配置
+
+
+mysql:
+1、开启binlog日志
+2、对对应账号进行授权
+
+
+具体配置: https://github.com/alibaba/canal/wiki/Canal-Kafka-RocketMQ-QuickStart
