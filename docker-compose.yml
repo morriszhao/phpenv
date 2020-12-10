@@ -346,6 +346,14 @@ services:
     volumes:
       - ${DATA_DIR}/grafana/plugins:/var/lib/grafana/plugins:rw
       - ${GRAFANA_CONF_FILE}:/usr/share/grafana/conf/defaults.ini:rw
-
+  consul:
+    image: consul:latest
+    ports:
+      - "8500:8500"
+      - "8600:8600"
+    container_name: consul
+    volumes:
+      - ${DATA_DIR}/consul/data:/consul/data:rw
+      - ${CONSUl_CONF}:/consul/conf:rw
 networks:
   default:
