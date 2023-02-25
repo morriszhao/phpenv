@@ -8,5 +8,5 @@ require (
 	github.com/grafana/grafana-plugin-model v0.0.0-20190930120109-1fc953a61fb4
 	github.com/hashicorp/go-plugin v1.2.2
 	github.com/kr/pretty v0.2.0 // indirect
-	golang.org/x/net v0.0.0-20200501053045-e0ff5e5a1de5
+	golang.org/x/net v0.7.0
 )
